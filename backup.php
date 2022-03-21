@@ -3,9 +3,8 @@
 // Incluindo o autoload do Composer para carregar a biblioteca
 require_once 'vendor/autoload.php';
 
-// Incluindo a classe que criamos
-require_once 'class/BackupDatabase.php';
-
+// Incluindo a classe
+require_once 'src/BackupDatabase.php';
 // Como a geração do backup pode ser demorada, retiramos
 // o limite de execução do script
 set_time_limit(0);

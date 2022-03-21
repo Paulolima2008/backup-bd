@@ -1,6 +1,7 @@
 <?php
 
 use Ifsnop\Mysqldump\Mysqldump;
+use src\EnvioPHPMailer;
 
 class BackupDatabase
 {
@@ -65,7 +66,11 @@ class BackupDatabase
         // Gerando backup
         $dump->start($filePath);
         echo "Gerado backup '{$filePath}'" . PHP_EOL;
-
+        
+        //enviando backup por email
+        $envioPHPMailer = new EnvioPHPMailer();
+        $envioPHPMailer->enviar($filePath);
+        
         // Limpando backups antigos
         $this->clearOldFiles();
     }

@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitc02b930b1c4cb9947c7cf04425b69194
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'I' => 
         array (
             'Ifsnop\\' => 7,
@@ -14,6 +18,10 @@ class ComposerStaticInitc02b930b1c4cb9947c7cf04425b69194
     );
 
     public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Ifsnop\\' => 
         array (
             0 => __DIR__ . '/..' . '/ifsnop/mysqldump-php/src/Ifsnop',

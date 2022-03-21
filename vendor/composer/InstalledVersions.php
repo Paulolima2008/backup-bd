@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '74311debeb0f072b8a06889f58d21db38f5a4c87',
+    'reference' => '43a19f355f8032c03f74c049c0d5197d6e684335',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '74311debeb0f072b8a06889f58d21db38f5a4c87',
+      'reference' => '43a19f355f8032c03f74c049c0d5197d6e684335',
     ),
     'ifsnop/mysqldump-php' => 
     array (
@@ -41,6 +41,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'fc9c119fe5d70af9a685cad6a8ac612fd7589e25',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.6.0',
+      'version' => '6.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e43bac82edc26ca04b36143a48bde1c051cfd5b1',
     ),
   ),
 );

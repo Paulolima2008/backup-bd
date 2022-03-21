@@ -1,0 +1,150 @@
+Author: Paulo Lima
+E-mail: paulolima2008@hotmail.com
+github: https://github.com/paulolima2008
+date: 2022-03-21
+
+//Bloqueie bots ruins
+RewriteEngine On 
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR]
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR]
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} Indy\ Library [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR]
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR]
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR]
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Wget [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule ^.* - [F,L]
+
+//Impedir a visualização do arquivo .htaccess----------
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+//-----------------------------------------------------
+//Impedir listagens de diretório-----------------------
+Options All -Indexes
+//-----------------------------------------------------
+//Protegendo contra hotlinks---------------------------
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?www.araujoseguros.com.br [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
+//------------------------------------------------------
+//Evitar injeção de codigos-----------------------------
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+    # Bloqueia todos os scripts que tentam modificar uma variável PHP GLOBAL:
+    RewriteCond %{QUERY_STRING} GLOBALS(=|[|%[0-9A-Z]{0,2}) [OR]
+    # Bloqueia todos os scripts que tentam modificar uma variável _REQUEST:
+    RewriteCond %{QUERY_STRING} _REQUEST(=|[|%[0-9A-Z]{0,2})
+
+    RewriteCond %{QUERY_STRING} \.\.\/ [NC,OR]
+    RewriteCond %{QUERY_STRING} boot\.ini [NC,OR]
+    RewriteCond %{QUERY_STRING} tag\= [NC,OR]
+    RewriteCond %{QUERY_STRING} ftp\:  [NC,OR]
+    RewriteCond %{QUERY_STRING} http\:  [NC,OR]
+    RewriteCond %{QUERY_STRING} https\:  [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|%3D) [NC,OR]
+    RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+    RewriteCond %{QUERY_STRING} ^.*(\[|\]|\(|\)|<|>|ê|"|;|\?|\*|=$).* [NC,OR]
+    RewriteCond %{QUERY_STRING} ^.*(&#x22;|&#x27;|&#x3C;|&#x3E;|&#x5C;|&#x7B;|&#x7C;).* [NC,OR]
+    RewriteCond %{QUERY_STRING} ^.*(%24&x).* [NC,OR]
+    RewriteCond %{QUERY_STRING} ^.*(%0|%A|%B|%C|%D|%E|%F|127\.0).* [NC,OR]
+    RewriteCond %{QUERY_STRING} ^.*(globals|encode|localhost|loopback).* [NC,OR]
+    RewriteCond %{QUERY_STRING} ^.*(request|select|insert|union|declare).* [NC]
+
+    # Se as requisições forem maliciosas enviamos tudo para a página inicial com um erro 403 Forbidden:
+    RewriteRule ^(.*)$ index.php [F,L]
+</IfModule>
+//-----------------------------------------------------
+//Segurança headers------------------------------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options nosniff
+    Header set X-XSS-Protection "1; mode=block"
+    Header always append X-Frame-Options SAMEORIGIN
+</IfModule>
+//-----------------------------------------------------
+//Configurações adicionais de segurança----------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options nosniff
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^TRACE
+    RewriteRule .* - [F]
+</IfModule>
+//-----------------------------------------------------
