@@ -5,6 +5,7 @@ require_once 'vendor/autoload.php';
 
 // Incluindo a classe
 require_once 'src/BackupDatabase.php';
+require_once 'config.php';
 // Como a geração do backup pode ser demorada, retiramos
 // o limite de execução do script
 set_time_limit(0);
@@ -20,5 +21,5 @@ $backup = new BackupDatabase('backups', 10);
  * @param string $username
  * @param string $password
  */
-$backup->setDatabase('localhost', 'avanc508_araujoseguros', 'paulo', '12345');
+$backup->setDatabase(HOST, DATABASE, USERNAME, PASSWORD);
 $backup->generate();
