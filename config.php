@@ -1,11 +1,9 @@
 <?php
 
- //As configurações básicas do banco de dados
-
- //Configurações do MySQL
-define('HOST', '');
-define('DATABASE', '');
-define('USERNAME', '');
-define('PASSWORD', '');
+//As configurações do banco de dados
+define('HOST', 'localhost');
+define('DATABASE', 'avanc508_araujoseguros');
+define('USERNAME', 'paulo');
+define('PASSWORD', '12345');
 
 

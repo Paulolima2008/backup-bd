@@ -1,6 +1,8 @@
 <?php
-// Importar as classes
+
 namespace src;
+
+// Importar as classes
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 

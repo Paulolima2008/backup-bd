@@ -1,17 +1,17 @@
 <?php
 
-use Ifsnop\Mysqldump\Mysqldump;
 use src\EnvioPHPMailer;
+use Ifsnop\Mysqldump\Mysqldump;
 
 class BackupDatabase
 {
     private $backupFolder;
     private $maxNumberFiles;
 
-    private $host;
-    private $database;
-    private $username;
-    private $password;
+    private $host = HOST;
+    private $database = DATABASE;
+    private $username = USERNAME;
+    private $password = PASSWORD;
 
     /**
      * Construtor
@@ -24,23 +24,6 @@ class BackupDatabase
         $this->backupFolder = $backupFolder;
         $this->maxNumberFiles = $maxNumberFiles;
     }
-
-    /**
-     * Define as informações de conexão com o banco de dados
-     *
-     * @param string $host
-     * @param string $database
-     * @param string $username
-     * @param string $password
-     */
-    public function setDatabase($host, $database, $username, $password)
-    {
-        $this->host = $host;
-        $this->database = $database;
-        $this->username = $username;
-        $this->password = $password;
-    }
-
     /**
      * Gera um backup
      *
